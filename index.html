@@ -10,6 +10,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Roboto&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="style.css">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
 </head>
 <body>
     <div class="container">
@@ -24,7 +28,6 @@
         </section>
 
         <section class="animations-grid">
-            <!-- Reidemeister III (Live Animation) -->
             <div class="animation-card">
                 <h3>Reidemeister Move (Type III)</h3>
                 <p>Sliding a strand across a pre-existing crossing. This move is described by the Braid Relation (or Yang-Baxter Equation): $\sigma_i \sigma_{i+1} \sigma_i = \sigma_{i+1} \sigma_i \sigma_{i+1}$.</p>
@@ -34,7 +37,6 @@
                 </div>
             </div>
 
-            <!-- Reidemeister II (Placeholder) -->
             <div class="animation-card placeholder">
                 <h3>Reidemeister Move (Type II)</h3>
                 <p>Sliding one strand completely over or under another, creating or eliminating two crossings.</p>
@@ -43,7 +45,6 @@
                 </div>
             </div>
 
-            <!-- Reidemeister I (Placeholder) -->
             <div class="animation-card placeholder">
                 <h3>Reidemeister Move (Type I)</h3>
                 <p>Adding or removing a twist in a single strand. Algebraically, this means a braid and its inverse cancel out.</p>
@@ -59,6 +60,8 @@
         </section>
 
     </div>
-    <script src="script.js"></script>
+
+    <script src="main.js"></script>
+    <script src="reidemeister3.js"></script>
 </body>
 </html>
