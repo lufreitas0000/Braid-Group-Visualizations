@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reidemeister Move Type III</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Roboto&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Reidemeister Move (Type III)</h1>
+            <p>An interactive visualization of the third Reidemeister move from knot theory, which is related to the Yang-Baxter equation. Use the slider to deform the braid.</p>
+        </header>
+        
+        <main class="animation-wrapper">
+            <canvas id="braid-canvas"></canvas>
+            <input type="range" id="t-slider" min="0" max="1" step="0.005" value="0">
+        </main>
+        
+        <footer>
+            <p>Strands are programmatically layered to simulate 3D crossings on a 2D canvas.</p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
