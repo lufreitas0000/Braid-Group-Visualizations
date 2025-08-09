@@ -3,42 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Braid Group Visualizations</title>
-    <link rel="stylesheet" href="./RIII/style.css"> 
-    <style>
-        /* A few extra styles just for the home page */
-        .container { text-align: left; }
-        .nav-list { list-style: none; padding-left: 0; }
-        .nav-list li { margin-bottom: 1rem; }
-        .nav-list a { 
-            font-size: 1.2rem; 
-            color: oklch(73.5% 0.14 245);
-            text-decoration: none;
-        }
-        .nav-list a:hover { text-decoration: underline; }
-        .nav-list span { color: oklch(81.16% 0.01 240 / 0.6); font-style: italic; }
-    </style>
+    <title>Interactive Braid Group Visualizations</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Roboto&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>Braid Group Visualizations</h1>
-            <p>Interactive animations of fundamental concepts in knot theory.</p>
+            <h1>Interactive Braid Group Visualizations</h1>
         </header>
-        
-        <main>
-            <ul class="nav-list">
-                <li>
-                    <a href="./RIII/index.html">Reidemeister Move (Type III)</a>
-                </li>
-                <li>
-                    <a href="#">Reidemeister Move (Type II)</a> <span>(Coming Soon)</span>
-                </li>
-                <li>
-                    <a href="#">Reidemeister Move (Type I)</a> <span>(Coming Soon)</span>
-                </li>
-            </ul>
-        </main>
+
+        <section class="content-section">
+            <h2>Mathematical Background</h2>
+            <p>In these visualizations, time flows from <strong>top to bottom</strong>. The strands can be understood as the worldlines of particles moving forward in time. The <strong>Braid Group on N strands</strong>, denoted $B_N$, is the algebraic structure describing how N strands can be braided, defined by generators $\sigma_i$ where the $i$-th strand crosses over the $(i+1)$-th strand.</p>
+            <p>Two knots are topologically equivalent if one can be deformed into the other through a series of three fundamental <strong>Reidemeister moves</strong>.</p>
+        </section>
+
+        <section class="animations-grid">
+            <!-- Reidemeister III (Live Animation) -->
+            <div class="animation-card">
+                <h3>Reidemeister Move (Type III)</h3>
+                <p>Sliding a strand across a pre-existing crossing. This move is described by the Braid Relation (or Yang-Baxter Equation): $\sigma_i \sigma_{i+1} \sigma_i = \sigma_{i+1} \sigma_i \sigma_{i+1}$.</p>
+                <div class="animation-wrapper">
+                    <canvas id="braid-canvas"></canvas>
+                    <input type="range" id="t-slider" min="0" max="1" step="0.005" value="0">
+                </div>
+            </div>
+
+            <!-- Reidemeister II (Placeholder) -->
+            <div class="animation-card placeholder">
+                <h3>Reidemeister Move (Type II)</h3>
+                <p>Sliding one strand completely over or under another, creating or eliminating two crossings.</p>
+                <div class="placeholder-box">
+                    <span>Coming Soon</span>
+                </div>
+            </div>
+
+            <!-- Reidemeister I (Placeholder) -->
+            <div class="animation-card placeholder">
+                <h3>Reidemeister Move (Type I)</h3>
+                <p>Adding or removing a twist in a single strand. Algebraically, this means a braid and its inverse cancel out.</p>
+                <div class="placeholder-box">
+                    <span>Coming Soon</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>Physical Applications</h2>
+            <p>The algebraic relation for the Type III move is known in physics as the <strong>Yang-Baxter equation</strong>. This equation is a fundamental condition for the integrability of models in statistical mechanics and quantum field theories, ensuring that scattering processes are consistent and allowing for exact solutions.</p>
+        </section>
+
     </div>
+    <script src="script.js"></script>
 </body>
 </html>
