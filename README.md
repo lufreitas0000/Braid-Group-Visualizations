@@ -2,6 +2,10 @@
 
 This project is a web-based, interactive visualization of the Reidemeister moves from knot theory, built with a focus on a clean, responsive design using plain HTML, CSS, and JavaScript.
 
+## Live Demo
+
+[**▶️ Animation here**](https://lufreitas0000.github.io/Braid-Group-Visualizations/)
+
 ## Mathematical Background
 
 In these visualizations, time is considered to flow from **top to bottom**. The strands can be understood as the worldlines of particles moving forward in time.
@@ -17,9 +21,9 @@ These generators must satisfy two fundamental relations:
 
 1.  **Commutativity for distant braids:** If two crossings do not share a strand (i.e., they are far apart), their order does not matter.
 
-    $$
+    \[
     \sigma_i \sigma_j = \sigma_j \sigma_i \quad \text{for} \quad |i-j| \ge 2
-    $$
+    \]
 
 2.  **The Braid Relation (Yang-Baxter Equation):** This relation describes how three adjacent strands interact. It is the algebraic form of the Reidemeister III move.
 
@@ -34,10 +38,6 @@ Two knots are topologically equivalent if one can be deformed into the other thr
 * **Type I (Twist):** Adding or removing a kink in a single strand. Algebraically, this corresponds to the fact that a braid and its inverse cancel out: $\sigma_i \sigma_i^{-1} = 1$.
 * **Type II (Poke):** Sliding one strand completely over or under another. This corresponds to creating or eliminating two crossings: $\sigma_i \sigma_{i+1} \sigma_i^{-1} \sigma_{i+1}^{-1} = 1$.
 * **Type III (Slide):** Sliding a strand across a pre-existing crossing. This is the move visualized in this project and is described by the Braid Relation shown above.
-
-## Live Demo
-
-[**▶️ View the live animation here**](https://lufreitas0000.github.io/Reidermester/)
 
 ## Physical Applications
 
