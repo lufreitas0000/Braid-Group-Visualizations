@@ -20,16 +20,14 @@ The **Braid Group on N strands**, denoted $B_N$, is the algebraic structure that
 These generators must satisfy two fundamental relations:
 
 1.  **Commutativity for distant braids:** If two crossings do not share a strand (i.e., they are far apart), their order does not matter.
-
-    \[
+```math
     \sigma_i \sigma_j = \sigma_j \sigma_i \quad \text{for} \quad |i-j| \ge 2
-    \]
+```
 
 2.  **The Braid Relation (Yang-Baxter Equation):** This relation describes how three adjacent strands interact. It is the algebraic form of the Reidemeister III move.
-
-    $$
-    \sigma_i \sigma_{i+1} \sigma_i = \sigma_{i+1} \sigma_i \sigma_{i+1}
-    $$
+```math
+   \sigma_i \sigma_{i+1} \sigma_i = \sigma_{i+1} \sigma_i \sigma_{i+1}
+```
 
 ### The Reidemeister Moves
 
