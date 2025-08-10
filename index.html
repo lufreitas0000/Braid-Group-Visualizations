@@ -7,7 +7,7 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="style.css">
 
@@ -24,32 +24,33 @@
         <section class="content-section">
             <h2>Mathematical Background</h2>
             <p>In these visualizations, time flows from <strong>top to bottom</strong>. The strands can be understood as the worldlines of particles moving forward in time. The <strong>Braid Group on N strands</strong>, denoted $B_N$, is the algebraic structure describing how N strands can be braided, defined by generators $\sigma_i$ where the $i$-th strand crosses over the $(i+1)$-th strand.</p>
-            <p>Two knots are topologically equivalent if one can be deformed into the other through a series of three fundamental <strong>Reidemeister moves</strong>.</p>
+            <p>The generator $\sigma_i$ represents the elementary braid where the $i$-th strand crosses <strong>over</strong> the $(i+1)$-th strand. Its inverse, $\sigma_i^{-1}$, is the crossing of the $i$-th strand <strong>under</strong> the $(i+1)$-th. Unlike a free group, the generators of the Braid Group are constrained by relations, most notably the Braid Relation (or Yang-Baxter Equation): $\sigma_i \sigma_{i+1} \sigma_i = \sigma_{i+1} \sigma_i \sigma_{i+1}$.</p>
+            <p>Two knots are considered topologically equivalent if one can be deformed into the other through a series of three fundamental <strong>Reidemeister moves</strong>.</p>
         </section>
 
         <section class="animations-grid">
+            <div class="animation-card placeholder">
+                <h3>Reidemeister Move (Type I)</h3>
+                <p>Adding or removing a twist in a single strand. $$ \sigma_i \sigma_i^{-1} = 1 $$</p>
+                <div class="placeholder-box">
+                    <span>Coming Soon</span>
+                </div>
+            </div>
+            
+            <div class="animation-card placeholder">
+                <h3>Reidemeister Move (Type II)</h3>
+                <p>Sliding one strand over or under another. $$ \sigma_i \sigma_{i+1} \sigma_i^{-1} \sigma_{i+1}^{-1} = 1 $$</p>
+                <div class="placeholder-box">
+                    <span>Coming Soon</span>
+                </div>
+            </div>
+
             <div class="animation-card">
                 <h3>Reidemeister Move (Type III)</h3>
-                <p>Sliding a strand across a pre-existing crossing. This move is described by the Braid Relation (or Yang-Baxter Equation): $\sigma_i \sigma_{i+1} \sigma_i = \sigma_{i+1} \sigma_i \sigma_{i+1}$.</p>
+                <p>Sliding a strand across a crossing. $$ \sigma_i \sigma_{i+1} \sigma_i = \sigma_{i+1} \sigma_i \sigma_{i+1} $$</p>
                 <div class="animation-wrapper">
                     <canvas id="braid-canvas"></canvas>
                     <input type="range" id="t-slider" min="0" max="1" step="0.005" value="0">
-                </div>
-            </div>
-
-            <div class="animation-card placeholder">
-                <h3>Reidemeister Move (Type II)</h3>
-                <p>Sliding one strand completely over or under another, creating or eliminating two crossings.</p>
-                <div class="placeholder-box">
-                    <span>Coming Soon</span>
-                </div>
-            </div>
-
-            <div class="animation-card placeholder">
-                <h3>Reidemeister Move (Type I)</h3>
-                <p>Adding or removing a twist in a single strand. Algebraically, this means a braid and its inverse cancel out.</p>
-                <div class="placeholder-box">
-                    <span>Coming Soon</span>
                 </div>
             </div>
         </section>

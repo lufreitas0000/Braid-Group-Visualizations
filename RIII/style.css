@@ -1,30 +1,7 @@
-/*
-    Recommended Fonts from Google Fonts (https://fonts.google.com):
-    
-    To use a font, make sure it's included in the <link> tag in the HTML file,
-    then change the 'font-family' property in the 'body' rule below.
-
-    - Sans-Serif (clean, modern):
-      'Inter',         - (Currently used)
-      'Lato',
-      'Roboto',
-      'Open Sans',
-      'Montserrat',
-      'Nunito Sans'
-
-    - Serif (classic, formal):
-      'Merriweather',
-      'Lora',
-      'Playfair Display'
-
-    - Monospace (code-like):
-      'Roboto Mono',
-      'Source Code Pro'
-*/
-
 /* General Body Styling */
 body {
-    font-family: 'Segoe UI', 'Inter', 'Roboto', sans-serif;
+    /* Font updated to Noto Sans */
+    font-family: 'Noto Sans', 'Segoe UI', 'Roboto', sans-serif;
     background-color: oklch(38.05% 0.03 255.3);
     color: oklch(95.27% 0.01 240);
     display: flex;
@@ -34,13 +11,13 @@ body {
     margin: 0;
     padding: 20px;
     box-sizing: border-box;
-    font-size: 16px; /* Base font size */
+    font-size: 16px;
 }
 
 /* Main Container */
 .container {
     width: 100%;
-    max-width: 600px;
+    max-width: 900px; /* Increased width for the new layout */
     text-align: left; 
     background-color: oklch(42.5% 0.03 255.3);
     padding: 30px 40px;
@@ -48,48 +25,83 @@ body {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
-/* Header and Footer Text Styling */
+/* Header Styling */
 header h1 {
     font-weight: 500;
-    margin-bottom: 15px;
+    margin-bottom: 2rem;
     color: oklch(100% 0 0);
     text-align: center; 
+    font-size: 2.5rem;
 }
 
-header p, footer p {
+/* Content Section Styling (for text) */
+.content-section {
+    max-width: 700px;
+    margin: 0 auto 2.5rem auto;
+    text-align: left;
+}
+
+.content-section h2 {
+    font-weight: 500;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid oklch(95.27% 0.01 240 / 0.2);
+    padding-bottom: 0.5rem;
+}
+
+.content-section p {
     font-weight: 300;
-    line-height: 1.6;
-    max-width: 100%; /* Changed from 500px to allow text to fill container */
-    margin-bottom: 25px; 
+    line-height: 1.7;
+    margin-bottom: 1rem;
     color: oklch(81.16% 0.01 240);
 }
 
-footer p {
-    font-size: 0.9em;
-    margin-top: 25px;
-    font-style: italic;
-    text-align: center; /* Center the footer text */
+/* Grid for the animation cards */
+.animations-grid {
+    display: grid;
+    /* Create three columns on wider screens */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
 }
 
-/* Animation elements wrapper */
+/* A single animation card */
+.animation-card {
+    background-color: oklch(38.05% 0.03 255.3 / 0.5);
+    padding: 1.5rem;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.animation-card h3 {
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+.animation-card p {
+    text-align: center;
+    font-size: 0.9em;
+    max-width: 400px;
+    margin: 0 auto 1.5rem auto;
+    flex-grow: 1; /* Allows text to take up space, aligning sliders */
+}
+
+/* Wrapper for the canvas and slider */
 .animation-wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-/* Canvas Styling */
 #braid-canvas {
     display: block;
     width: 100%;
     max-width: 400px;
-    height: auto; /* Height is now controlled by JS */
+    height: auto;
     background-color: oklch(95.27% 0.01 240);
     border-radius: 10px;
     box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Slider Styling */
 #t-slider {
     -webkit-appearance: none;
     appearance: none;
@@ -100,22 +112,28 @@ footer p {
     outline: none;
     border-radius: 5px;
     margin-top: 30px;
-    transition: opacity 0.2s;
 }
 
-#t-slider:hover { opacity: 1; }
-#t-slider::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 22px; height: 22px; background: oklch(66.5% 0.16 245); cursor: pointer; border-radius: 50%; border: 3px solid oklch(95.27% 0.01 240); box-shadow: 0 0 5px oklch(66.5% 0.16 245 / 0.5); transition: background 0.2s, transform 0.2s; }
-#t-slider::-webkit-slider-thumb:hover { background: oklch(73.5% 0.14 245); transform: scale(1.1); }
-#t-slider::-moz-range-thumb { width: 22px; height: 22px; background: oklch(66.5% 0.16 245); cursor: pointer; border-radius: 50%; border: 3px solid oklch(95.27% 0.01 240); box-shadow: 0 0 5px oklch(66.5% 0.16 245 / 0.5); transition: background 0.2s, transform 0.2s; }
-#t-slider::-moz-range-thumb:hover { background: oklch(73.5% 0.14 245); transform: scale(1.1); }
-
-
-/* --- NEW: Media Query for smaller screens --- */
-@media (max-width: 480px) {
-    body {
-        font-size: 14px; /* Reduce base font size on small screens */
-    }
-    .container {
-        padding: 20px; /* Reduce padding on small screens */
-    }
+/* Placeholder Styling */
+.animation-card.placeholder {
+    opacity: 0.6;
 }
+
+.placeholder-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    aspect-ratio: 3 / 4;
+    background-color: oklch(42.5% 0.03 255.3 / 0.5);
+    border: 2px dashed oklch(95.27% 0.01 240 / 0.3);
+    border-radius: 10px;
+    font-size: 1.5rem;
+    color: oklch(95.27% 0.01 240 / 0.5);
+}
+
+/* ... Slider thumb styles (no changes) ... */
+#t-slider::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 22px; height: 22px; background: oklch(66.5% 0.16 245); cursor: pointer; border-radius: 50%; border: 3px solid oklch(95.27% 0.01 240); box-shadow: 0 0 5px oklch(66.5% 0.16 245 / 0.5); }
+#t-slider::-moz-range-thumb { width: 22px; height: 22px; background: oklch(66.5% 0.16 245); cursor: pointer; border-radius: 50%; border: 3px solid oklch(95.27% 0.01 240); box-shadow: 0 0 5px oklch(66.5% 0.16 245 / 0.5); }
